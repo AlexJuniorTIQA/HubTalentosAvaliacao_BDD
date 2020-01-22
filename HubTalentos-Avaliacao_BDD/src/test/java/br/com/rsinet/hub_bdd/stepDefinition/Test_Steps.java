@@ -14,14 +14,8 @@ public class Test_Steps {
 	    throw new PendingException();
 	}
 
-	@Quando("^clico no icone de login$")
-	public void clico_no_icone_de_login() throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new PendingException();
-	}
-
-	@Quando("^clico em criar nova conta$")
-	public void clico_em_criar_nova_conta() throws Throwable {
+	@Quando("^clico no icone de login e em nova conta$")
+	public void clico_no_icone_de_login_e_em_nova_conta() throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
 	    throw new PendingException();
 	}
@@ -44,6 +38,12 @@ public class Test_Steps {
 	    throw new PendingException();
 	}
 	
+	@Então("^eu não consigo criar meu usuario pois já há um existente$")
+	public void eu_não_consigo_criar_meu_usuario_pois_já_há_um_existente() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new PendingException();
+	}
+
 	
 
 }
