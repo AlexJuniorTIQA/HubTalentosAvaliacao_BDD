@@ -8,9 +8,12 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.Select;
 
+import br.com.rsinet.hub_bdd.files.ExcelUtils;
+
 public class PageRegister {
 
 	final WebDriver driver;
+	private PageRegister pageRegister;
 	///////////// Elements: Account Details////////////////
 	@FindBy(how = How.NAME, using = "usernameRegisterPage")
 
@@ -148,6 +151,7 @@ public class PageRegister {
 	public void clickButtonRegister() {
 		elementButtonRegister.click();
 	}
+	
 		
 	public void clickButtonRegisterFail() {
 		elementButtonRegister.click();
@@ -161,6 +165,8 @@ public class PageRegister {
 	public void assertEqualsRegisterFail() {
 		Assert.assertEquals("User name already exists",driver.findElement(By.xpath("/html/body/div[3]/section/article/sec-form/div[2]/label[1]")).getText());
 	}
+	
+
 	
 	
 	

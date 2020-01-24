@@ -42,4 +42,16 @@ public class ConsultaProdutoTelaInicial {
 		productPage.assertEqualsProduct(ExcelUtils.getCellData(3, 1));
 		Screenshot.getScreenShot(driver, "TesteConsultaTelaPrincipalSucesso ");
 	}
+	
+	@Test
+	public void ConsultarProdutoFalha ()throws Exception  {
+		HomePage homePage = PageFactory.initElements(driver, HomePage.class);
+		ProductPage productPage = PageFactory.initElements(driver, ProductPage.class);
+		ExcelUtils.setExcelFile(Constant.File_DataUserRegister,"Mice");
+		
+		homePage.ClickEelementHPEliteBookFolioDetails();
+		productPage.assertEqualsProduct("HP CHROMEBOOK 14 G1(ES)");
+
+	}
+	
 }
