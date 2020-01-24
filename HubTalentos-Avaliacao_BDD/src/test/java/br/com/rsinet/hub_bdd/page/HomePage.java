@@ -87,7 +87,6 @@ public class HomePage {
 		Thread.sleep(1500);
 		WebDriverWait wait = new WebDriverWait(driver, 90);
 		wait.until(ExpectedConditions.urlToBe("https://www.advantageonlineshopping.com/#/"));
-
 	}
 
 	public void assertEqualsUser(String expected) {
