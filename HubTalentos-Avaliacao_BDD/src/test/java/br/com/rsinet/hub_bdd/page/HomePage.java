@@ -53,6 +53,10 @@ public class HomePage {
 
 	@FindBy(how = How.XPATH, using = "/html/body/header/nav/ul/li[3]/a/span")
 	private WebElement elementUserLink;
+	
+	@FindBy(how = How.ID, using = "details_10")
+
+	private WebElement elementHPEliteBookFolioDetails;
 
 	public HomePage(WebDriver driver) {
 
@@ -79,18 +83,26 @@ public class HomePage {
 		elementSearch.sendKeys(search + Keys.ENTER);
 	}
 	
-	
-
-	public void waitHome() {
-		WebDriverWait wait = new WebDriverWait(driver, 30);
+	public void waitHome() throws InterruptedException {
+		Thread.sleep(1500);
+		WebDriverWait wait = new WebDriverWait(driver, 90);
 		wait.until(ExpectedConditions.urlToBe("https://www.advantageonlineshopping.com/#/"));
+
 	}
 
 	public void assertEqualsUser(String expected) {
 		Assert.assertEquals(expected, elementUserLink.getText());
 	}
+	
+	public WebElement getIconSearch() {
+		return elementIconSearch;
+	}
 	public void clickIconSearch() {
 		elementIconSearch.click();
+	}
+	
+	public void ClickEelementHPEliteBookFolioDetails() {
+		elementHPEliteBookFolioDetails.click(); 
 	}
 
 }
