@@ -42,7 +42,7 @@ public class StepConsultaProdutoTelaInicial {
 
 	}
 
-	@E("^acesso á página do produto$")
+	@E("^acesso a página do produto$")
 	public void acesso_á_página_do_produto() throws Throwable {
 		productPage.assertEqualsProduct(ExcelUtils.getCellData(3, 1));
 		Screenshot.getScreenShot(driver, "TesteConsultaTelaPrincipalSucesso ");
@@ -53,7 +53,7 @@ public class StepConsultaProdutoTelaInicial {
 		homePage.ClickEelementHPEliteBookFolioDetails();
 	}
 
-	@Então("^acesso á página de outro produto$")
+	@Então("^acesso a página de outro produto$")
 	public void acesso_á_página_de_outro_produto() throws Throwable {
 		productPage.assertEqualsProduct("HP CHROMEBOOK 14 G1(ES)");
 	}

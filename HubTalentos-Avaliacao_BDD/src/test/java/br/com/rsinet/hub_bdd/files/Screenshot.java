@@ -18,7 +18,8 @@ import org.openqa.selenium.WebDriver;
 	        return new SimpleDateFormat("dd_MM_yyyy HH.mm.ss").format(Calendar.getInstance().getTime());
 	    }
 	    
-	    public static void getScreenShot(WebDriver driver, String testName){
+	    public static void getScreenShot(WebDriver driver, String testName) throws InterruptedException{
+	    	Thread.sleep(1000);
 	        File file = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 	        
 	        try {

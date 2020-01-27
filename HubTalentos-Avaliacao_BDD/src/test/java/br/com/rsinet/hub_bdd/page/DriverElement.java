@@ -12,7 +12,7 @@ public class DriverElement {
 	public static WebDriver getChromeDriver() {
 			driver = new ChromeDriver();
 			driver.get("https://www.advantageonlineshopping.com/");
-			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 			driver.manage().window().setSize(new Dimension(1200, 800));
 		return driver;
 	}

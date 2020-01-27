@@ -1,5 +1,8 @@
 package br.com.rsinet.hub_bdd.page;
 
+import java.time.zone.ZoneOffsetTransitionRule.TimeDefinition;
+import java.util.concurrent.TimeUnit;
+
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -54,7 +57,7 @@ public class HomePage {
 	@FindBy(how = How.XPATH, using = "/html/body/header/nav/ul/li[3]/a/span")
 	private WebElement elementUserLink;
 	
-	@FindBy(how = How.ID, using = "details_10")
+	@FindBy(how = How.XPATH, using = "/html/body/div[3]/section/article[4]/div/div[2]/a/label")
 
 	private WebElement elementHPEliteBookFolioDetails;
 
@@ -84,7 +87,7 @@ public class HomePage {
 	}
 	
 	public void waitHome() throws InterruptedException {
-		Thread.sleep(1500);
+		Thread.sleep(2000);
 		WebDriverWait wait = new WebDriverWait(driver, 90);
 		wait.until(ExpectedConditions.urlToBe("https://www.advantageonlineshopping.com/#/"));
 	}
@@ -103,5 +106,4 @@ public class HomePage {
 	public void ClickEelementHPEliteBookFolioDetails() {
 		elementHPEliteBookFolioDetails.click(); 
 	}
-
 }

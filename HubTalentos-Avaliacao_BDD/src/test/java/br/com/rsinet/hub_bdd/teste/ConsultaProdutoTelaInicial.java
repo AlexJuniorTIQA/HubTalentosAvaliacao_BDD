@@ -46,10 +46,11 @@ public class ConsultaProdutoTelaInicial {
 	@Test
 	public void ConsultarProdutoFalha ()throws Exception  {
 		HomePage homePage = PageFactory.initElements(driver, HomePage.class);
-		ProductPage productPage = PageFactory.initElements(driver, ProductPage.class);
+		
 		
 		homePage.ClickEelementHPEliteBookFolioDetails();
 	
+
 	}
 	
 }
