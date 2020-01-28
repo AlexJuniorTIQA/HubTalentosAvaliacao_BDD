@@ -14,7 +14,7 @@
     <documentTitle>ExtentReports</documentTitle>
     
     <!-- report name - displayed at top-nav -->
-    <reportName>JUnit - Cucumber Framework</reportName>
+    <reportName>JUnit - Cucumber Test</reportName>
     
     <!-- global date format override -->  <!-- defaults to yyyy-MM-dd -->
     <dateFormat>yyyy-MM-dd</dateFormat>
