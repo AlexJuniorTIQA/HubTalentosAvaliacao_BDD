@@ -14,6 +14,8 @@ public class UserRegister {
 
 		this.driver = driver;
 	}
+	
+	/**Classe que preenche todos os campos da página de registro(RegisterPage): Recebe como parâmetro um objeto do tipo integer**/
 	public void setUserRegister(int numberUser) throws Exception {
 
 		RegisterPage registerPage = PageFactory.initElements(driver, RegisterPage.class);
