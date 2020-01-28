@@ -10,10 +10,10 @@ import org.openqa.selenium.support.ui.Select;
 
 import br.com.rsinet.hub_bdd.files.ExcelUtils;
 
-public class PageRegister {
+public class RegisterPage {
 
 	final WebDriver driver;
-	private PageRegister pageRegister;
+	private RegisterPage pageRegister;
 	///////////// Elements: Account Details////////////////
 	@FindBy(how = How.NAME, using = "usernameRegisterPage")
 
@@ -78,7 +78,7 @@ public class PageRegister {
 	private WebElement elementButtonRegister;
 
 	////////////////////////////////////////////////////////
-	public PageRegister(WebDriver driver) {
+	public RegisterPage(WebDriver driver) {
 
 		this.driver = driver;
 	}
