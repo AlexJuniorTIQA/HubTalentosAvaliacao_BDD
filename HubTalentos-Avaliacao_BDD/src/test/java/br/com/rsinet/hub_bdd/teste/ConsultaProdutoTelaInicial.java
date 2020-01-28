@@ -39,7 +39,7 @@ public class ConsultaProdutoTelaInicial {
 		ProductPage productPage = PageFactory.initElements(driver, ProductPage.class);
 		ExcelUtils.setExcelFile(Constant.File_DataUserRegister, "Mice");
 
-		homePage.javaScriptClick(By.id("miceTxt"));
+		homePage.clickMice();
 		homePage.findElementLinkText(ExcelUtils.getCellData(3, 1));
 
 		productPage.assertEqualsProduct(ExcelUtils.getCellData(3, 1));
@@ -48,9 +48,12 @@ public class ConsultaProdutoTelaInicial {
 
 	@Test
 	public void ConsultarProdutoFalha() throws Exception {
-		HomePage homePage = PageFactory.initElements(driver, HomePage.class);
-		homePage.ClickEelementHPEliteBookFolioDetails();
-
+		
+		ProductPage productPage = PageFactory.initElements(driver, ProductPage.class);
+		
+		productPage.ClickEelementHPEliteBookFolioDetails();
+		productPage.assertEqualsProduct("HP CHROMEBOOK 14 G1(ES)");	
+		Screenshot.getScreenShot(driver, "TestaConsultaTelaPrincipalFalha");
 	}
 
 }
