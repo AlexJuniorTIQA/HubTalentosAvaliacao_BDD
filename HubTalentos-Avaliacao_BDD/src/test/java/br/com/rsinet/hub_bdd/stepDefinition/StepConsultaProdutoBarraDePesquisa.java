@@ -48,7 +48,7 @@ public class StepConsultaProdutoBarraDePesquisa {
 	@Então("^o site me retorna o produto pesquisado$")
 	public void o_site_me_retorna_o_produto_pesquisado() throws Throwable {
 		productPage.assertEqualsProduct(ExcelUtils.getCellData(1, 1));
-		Screenshot.getScreenShot(driver, "TesteConsultaProdutoComSucesso ");
+		Screenshot.getScreenShot(driver, "Consultar Produto Com Sucesso", "TesteConsultaProdutoComSucesso");
 
 	}
 
@@ -62,7 +62,7 @@ public class StepConsultaProdutoBarraDePesquisa {
 	@Então("^o site me retorna que o produto não foi encontrado$")
 	public void o_site_me_retorna_que_o_produto_não_foi_encontrado() throws Throwable {
 		productPage.assertEqualsProductFail(ExcelUtils.getCellData(6, 1));
-		Screenshot.getScreenShot(driver, "TesteConsultaProdutoFalha ");
+		Screenshot.getScreenShot(driver, "Consultar Produto Com Falha", "TesteConsultaProdutoFalha");
 	}
 
 }

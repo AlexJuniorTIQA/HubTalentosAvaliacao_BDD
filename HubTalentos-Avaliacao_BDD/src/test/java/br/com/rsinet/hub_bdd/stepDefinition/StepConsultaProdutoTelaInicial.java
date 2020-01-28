@@ -34,7 +34,6 @@ public class StepConsultaProdutoTelaInicial {
 		productPage = PageFactory.initElements(driver, ProductPage.class);
 		ExcelUtils.setExcelFile(Constant.File_DataUserRegister, "Mice");
 	}
-	
 
 	@Quando("^clico em um dos produtos$")
 	public void clico_em_um_dos_produtos() throws Throwable {
@@ -46,8 +45,9 @@ public class StepConsultaProdutoTelaInicial {
 	@E("^acesso a página do produto$")
 	public void acesso_á_página_do_produto() throws Throwable {
 		productPage.assertEqualsProduct(ExcelUtils.getCellData(3, 1));
-		Screenshot.getScreenShot(driver, "TesteConsultaTelaPrincipalSucesso ");
+		Screenshot.getScreenShot(driver, "Consultar Produto Com Sucesso", "TesteConsultaTelaPrincipalSucesso");
 	}
+
 	@Quando("^clico no item HP elitebook Folio$")
 	public void clico_no_item_HP_elitebook_Folio() throws Throwable {
 		homePage.waitHome();
@@ -57,7 +57,7 @@ public class StepConsultaProdutoTelaInicial {
 	@Então("^acesso a página de outro produto$")
 	public void acesso_á_página_de_outro_produto() throws Throwable {
 		productPage.assertEqualsProduct("HP CHROMEBOOK 14 G1(ES)");
-		Screenshot.getScreenShot(driver, "TesteConsultaTelaPrincipalFalha ");
+		Screenshot.getScreenShot(driver, "Consultar Produto Com Falha", "TesteConsultaTelaPrincipalSucesso");
 	}
 
 }

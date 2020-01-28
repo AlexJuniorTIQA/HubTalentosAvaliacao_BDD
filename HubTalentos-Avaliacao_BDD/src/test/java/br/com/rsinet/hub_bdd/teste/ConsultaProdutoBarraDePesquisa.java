@@ -45,7 +45,7 @@ public class ConsultaProdutoBarraDePesquisa {
 		homePage.findElementLinkText(ExcelUtils.getCellData(1, 1));
 
 		productPage.assertEqualsProduct(ExcelUtils.getCellData(1, 1));
-		Screenshot.getScreenShot(driver, "TesteConsultaProdutoComSucesso ");
+		Screenshot.getScreenShot(driver, "Consultar Produto Com Sucesso", "TesteConsultaProdutoComSucesso");
 	}
 
 	@Test
@@ -59,8 +59,7 @@ public class ConsultaProdutoBarraDePesquisa {
 		homePage.setSearch(ExcelUtils.getCellData(6, 1));
 
 		productPage.assertEqualsProductFail(ExcelUtils.getCellData(6, 1));
-		Screenshot.getScreenShot(driver, "TesteConsultaProdutoFalha ");
-
+		Screenshot.getScreenShot(driver, "Consultar Produto Com Falha", "TesteConsultaProdutoComFalha");
 
 	}
 

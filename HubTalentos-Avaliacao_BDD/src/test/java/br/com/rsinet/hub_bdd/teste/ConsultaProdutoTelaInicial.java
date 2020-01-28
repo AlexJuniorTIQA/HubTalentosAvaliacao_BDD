@@ -43,7 +43,7 @@ public class ConsultaProdutoTelaInicial {
 		homePage.findElementLinkText(ExcelUtils.getCellData(3, 1));
 
 		productPage.assertEqualsProduct(ExcelUtils.getCellData(3, 1));
-		Screenshot.getScreenShot(driver, "TesteConsultaTelaPrincipalSucesso ");
+		Screenshot.getScreenShot(driver, "Consultar Produto Com Sucesso", "TesteConsultaTelaPrincipalComSucesso");
 	}
 
 	@Test
@@ -53,7 +53,8 @@ public class ConsultaProdutoTelaInicial {
 		
 		productPage.ClickEelementHPEliteBookFolioDetails();
 		productPage.assertEqualsProduct("HP CHROMEBOOK 14 G1(ES)");	
-		Screenshot.getScreenShot(driver, "TestaConsultaTelaPrincipalFalha");
+		
+		Screenshot.getScreenShot(driver, "Consultar Produto Com Falha", "TesteConsultaTelaPrincipalComFalha");
 	}
 
 }

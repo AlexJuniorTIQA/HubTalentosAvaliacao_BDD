@@ -48,7 +48,7 @@ public class CadastroUsuario {
 		homePage.waitHome();
 
 		homePage.assertEqualsUser(ExcelUtils.getCellData(1,1));
-		Screenshot.getScreenShot(driver, "TesteNovoUsuárioComSucesso ");
+		Screenshot.getScreenShot(driver, "Cadastro Novo Usuario Com Sucesso", "TesteNovoUsuarioComSucesso");
 	}
 	
 	
@@ -69,6 +69,6 @@ public class CadastroUsuario {
 		
 		
 		registerPage.assertEqualsRegisterFail();
-		Screenshot.getScreenShot(driver, "TesteNovoUsuárioComFalha ");
+		Screenshot.getScreenShot(driver, "Cadastro Usuario Com Falha", "TesteNovoUsuarioComFalha");
 	}
 }
