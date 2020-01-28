@@ -57,9 +57,6 @@ public class HomePage {
 	@FindBy(how = How.XPATH, using = "/html/body/header/nav/ul/li[3]/a/span")
 	private WebElement elementUserLink;
 	
-	@FindBy(how = How.XPATH, using = "/html/body/div[3]/section/article[4]/div/div[2]/a/label")
-
-	private WebElement elementHPEliteBookFolioDetails;
 
 	public HomePage(WebDriver driver) {
 
@@ -102,8 +99,9 @@ public class HomePage {
 	public void clickIconSearch() {
 		elementIconSearch.click();
 	}
-	
-	public void ClickEelementHPEliteBookFolioDetails() {
-		elementHPEliteBookFolioDetails.click(); 
+	public void clickMice() {
+		javaScriptClick(By.id("miceTxt"));
 	}
+	
+	
 }
