@@ -102,11 +102,12 @@ public class HomePage {
 	}
 
 	/**
-	 * Método de espera para Página inicial, utiliza um ThreadSleep e WebDriverWait,
+	 * Método de espera para Página inicial, utiliza um JavaScriptExecutor e WebDriverWait,
 	 * aguardando á página inicial do site AdvantageOnlineShopping ser carregada
 	 **/
 	public void waitHome() throws InterruptedException {
-		Thread.sleep(2000);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeAsyncScript("window.setTimeout(arguments[arguments.length - 1], 2000);");
 		WebDriverWait wait = new WebDriverWait(driver, 90);
 		wait.until(ExpectedConditions.urlToBe("https://www.advantageonlineshopping.com/#/"));
 	}

@@ -14,6 +14,7 @@ import cucumber.api.junit.Cucumber;
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "./feature/",
 				glue = "br.com.rsinet.hub_bdd.stepDefinition",
+				//tag={"@tag"}, 
 				plugin = {
 						"com.cucumber.listener.ExtentCucumberFormatter:target/reports/StepsReportTest.html" })
 public class RunnerTest {
