@@ -16,7 +16,7 @@ import cucumber.api.junit.Cucumber;
 				glue = "br.com.rsinet.hub_bdd.stepDefinition",
 				//tag={"@tag"}, 
 				plugin = {
-						"com.cucumber.listener.ExtentCucumberFormatter:target/report/StepsReportTest.html" })
+						"com.cucumber.listener.ExtentCucumberFormatter:target/StepsReportTest.html" })
 public class RunnerTest {
 	@AfterClass
 	public static void writeExtentReport() throws IOException { 		
