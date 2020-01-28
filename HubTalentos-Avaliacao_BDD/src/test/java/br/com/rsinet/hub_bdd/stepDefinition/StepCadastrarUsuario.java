@@ -8,7 +8,7 @@ import br.com.rsinet.hub_bdd.files.ExcelUtils;
 import br.com.rsinet.hub_bdd.files.Screenshot;
 import br.com.rsinet.hub_bdd.page.DriverElement;
 import br.com.rsinet.hub_bdd.page.HomePage;
-import br.com.rsinet.hub_bdd.page.PageRegister;
+import br.com.rsinet.hub_bdd.page.RegisterPage;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.pt.Dado;
@@ -20,7 +20,7 @@ public class StepCadastrarUsuario {
 
 	private WebDriver driver;
 	private HomePage homePage;
-	private PageRegister pageRegister;
+	private RegisterPage registerPage;
 
 	@After
 	public void finaliza() {
@@ -31,7 +31,7 @@ public class StepCadastrarUsuario {
 	public void que_eu_estou_na_home_do_site() throws Throwable {
 		driver = DriverElement.getChromeDriver();
 		homePage = PageFactory.initElements(driver, HomePage.class);
-		pageRegister = PageFactory.initElements(driver, PageRegister.class);
+		registerPage = PageFactory.initElements(driver, RegisterPage.class);
 		ExcelUtils.setExcelFile(Constant.File_DataUserRegister, "Users");
 
 	}
@@ -46,27 +46,27 @@ public class StepCadastrarUsuario {
 	@E("^preencho todos os dados$")
 	public void preencho_todos_os_dados() throws Throwable {
 		
-		pageRegister.setUserName(ExcelUtils.getCellData(1, 1));
-		pageRegister.setEmail(ExcelUtils.getCellData(1, 2));
-		pageRegister.setPassword(ExcelUtils.getCellData(1, 3));
-		pageRegister.setConfirmPassword(ExcelUtils.getCellData(1, 3));
+		registerPage.setUserName(ExcelUtils.getCellData(1, 1));
+		registerPage.setEmail(ExcelUtils.getCellData(1, 2));
+		registerPage.setPassword(ExcelUtils.getCellData(1, 3));
+		registerPage.setConfirmPassword(ExcelUtils.getCellData(1, 3));
 
-		pageRegister.setFirstName(ExcelUtils.getCellData(1, 4));
-		pageRegister.setLastName(ExcelUtils.getCellData(1, 5));
-		pageRegister.setPhoneNumber(ExcelUtils.getCellData(1, 6));
+		registerPage.setFirstName(ExcelUtils.getCellData(1, 4));
+		registerPage.setLastName(ExcelUtils.getCellData(1, 5));
+		registerPage.setPhoneNumber(ExcelUtils.getCellData(1, 6));
 
-		pageRegister.selectCountry(ExcelUtils.getCellData(1, 7));
-		pageRegister.setCity(ExcelUtils.getCellData(1, 8));
-		pageRegister.setAdress(ExcelUtils.getCellData(1, 9));
-		pageRegister.setState(ExcelUtils.getCellData(1, 10));
-		pageRegister.setPostalCode(ExcelUtils.getCellData(1, 11));
+		registerPage.selectCountry(ExcelUtils.getCellData(1, 7));
+		registerPage.setCity(ExcelUtils.getCellData(1, 8));
+		registerPage.setAdress(ExcelUtils.getCellData(1, 9));
+		registerPage.setState(ExcelUtils.getCellData(1, 10));
+		registerPage.setPostalCode(ExcelUtils.getCellData(1, 11));
 	}
 
 	@E("^clico no botão registar$")
 
 	public void clico_no_botão_registar() throws Throwable {
-		pageRegister.clickCheckConditionsOfUse();
-		pageRegister.clickButtonRegister();
+		registerPage.clickCheckConditionsOfUse();
+		registerPage.clickButtonRegister();
 	}
 
 	@Então("^consigo criar o meu usuário$")
@@ -78,8 +78,8 @@ public class StepCadastrarUsuario {
 
 	@Então("^não consigo criar meu usuario, pois já há um existente$")
 	public void eu_não_consigo_criar_meu_usuario_pois_já_há_um_existente() throws Throwable {
-		pageRegister.clickButtonRegisterFail();
-		pageRegister.assertEqualsRegisterFail();
+		registerPage.clickButtonRegisterFail();
+		registerPage.assertEqualsRegisterFail();
 		Screenshot.getScreenShot(driver, "CadastroNovoUsuário_Falha ");
 	}
 
