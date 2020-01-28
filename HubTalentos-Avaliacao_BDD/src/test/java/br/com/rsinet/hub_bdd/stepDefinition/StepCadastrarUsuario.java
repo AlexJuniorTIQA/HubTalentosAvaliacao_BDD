@@ -9,6 +9,7 @@ import br.com.rsinet.hub_bdd.files.Screenshot;
 import br.com.rsinet.hub_bdd.page.DriverElement;
 import br.com.rsinet.hub_bdd.page.HomePage;
 import br.com.rsinet.hub_bdd.page.RegisterPage;
+import br.com.rsinet.hub_bdd.page.UserRegister;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.pt.Dado;
@@ -21,6 +22,7 @@ public class StepCadastrarUsuario {
 	private WebDriver driver;
 	private HomePage homePage;
 	private RegisterPage registerPage;
+	private UserRegister userRegister;
 
 	@After
 	public void finaliza() {
@@ -33,7 +35,7 @@ public class StepCadastrarUsuario {
 		homePage = PageFactory.initElements(driver, HomePage.class);
 		registerPage = PageFactory.initElements(driver, RegisterPage.class);
 		ExcelUtils.setExcelFile(Constant.File_DataUserRegister, "Users");
-
+		userRegister = PageFactory.initElements(driver, UserRegister.class);
 	}
 
 	@Quando("^clico no icone de login e em nova conta$")
@@ -46,26 +48,13 @@ public class StepCadastrarUsuario {
 	@E("^preencho todos os dados$")
 	public void preencho_todos_os_dados() throws Throwable {
 		
-		registerPage.setUserName(ExcelUtils.getCellData(1, 1));
-		registerPage.setEmail(ExcelUtils.getCellData(1, 2));
-		registerPage.setPassword(ExcelUtils.getCellData(1, 3));
-		registerPage.setConfirmPassword(ExcelUtils.getCellData(1, 3));
-
-		registerPage.setFirstName(ExcelUtils.getCellData(1, 4));
-		registerPage.setLastName(ExcelUtils.getCellData(1, 5));
-		registerPage.setPhoneNumber(ExcelUtils.getCellData(1, 6));
-
-		registerPage.selectCountry(ExcelUtils.getCellData(1, 7));
-		registerPage.setCity(ExcelUtils.getCellData(1, 8));
-		registerPage.setAdress(ExcelUtils.getCellData(1, 9));
-		registerPage.setState(ExcelUtils.getCellData(1, 10));
-		registerPage.setPostalCode(ExcelUtils.getCellData(1, 11));
+		userRegister.setUserRegister(1);
 	}
 
 	@E("^clico no botão registar$")
 
 	public void clico_no_botão_registar() throws Throwable {
-		registerPage.clickCheckConditionsOfUse();
+		
 		registerPage.clickButtonRegister();
 	}
 
