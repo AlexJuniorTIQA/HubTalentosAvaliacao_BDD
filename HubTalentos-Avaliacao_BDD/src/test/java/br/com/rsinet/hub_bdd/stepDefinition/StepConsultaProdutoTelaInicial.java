@@ -45,7 +45,8 @@ public class StepConsultaProdutoTelaInicial {
 	@E("^acesso a página do produto$")
 	public void acesso_á_página_do_produto() throws Throwable {
 		productPage.assertEqualsProduct(ExcelUtils.getCellData(3, 1));
-		Screenshot.getScreenShot(driver, "Consultar Produto Com Sucesso", "TesteConsultaTelaPrincipalSucesso");
+		Screenshot.getScreenShot(driver, "Consultar Produto Pela Tela Inicial Com Sucesso",
+				"TesteConsultaTelaPrincipalComSucesso");
 	}
 
 	@Quando("^clico no item HP elitebook Folio$")
@@ -57,7 +58,8 @@ public class StepConsultaProdutoTelaInicial {
 	@Então("^acesso a página de outro produto$")
 	public void acesso_á_página_de_outro_produto() throws Throwable {
 		productPage.assertEqualsProduct("HP CHROMEBOOK 14 G1(ES)");
-		Screenshot.getScreenShot(driver, "Consultar Produto Com Falha", "TesteConsultaTelaPrincipalSucesso");
+		Screenshot.getScreenShot(driver, "Consultar Produto Pela Tela Inicial Com Falha",
+				"TesteConsultaTelaPrincipalComFalha");
 	}
 
 }

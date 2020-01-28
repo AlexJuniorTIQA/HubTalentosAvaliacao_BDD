@@ -33,7 +33,7 @@ public class ConsultaProdutoBarraDePesquisa {
 	}
 
 	@Test
-	public void ConsultarProdutoComSucesso() throws Exception {
+	public void ConsultarProdutoPelaBarraDePesquisaComSucesso() throws Exception {
 
 		HomePage homePage = PageFactory.initElements(driver, HomePage.class);
 		ProductPage productPage = PageFactory.initElements(driver, ProductPage.class);
@@ -45,11 +45,11 @@ public class ConsultaProdutoBarraDePesquisa {
 		homePage.findElementLinkText(ExcelUtils.getCellData(1, 1));
 
 		productPage.assertEqualsProduct(ExcelUtils.getCellData(1, 1));
-		Screenshot.getScreenShot(driver, "Consultar Produto Com Sucesso", "TesteConsultaProdutoComSucesso");
+		Screenshot.getScreenShot(driver, "Consultar Produto Pela Barra de Pesquisa Com Sucesso", "TesteConsultaProdutoPelaBarraDePesquisaComSucesso");
 	}
 
 	@Test
-	public void ConsultarProdutoComFalha() throws Exception {
+	public void ConsultarProdutoPelaBarraDePesquisaComFalha() throws Exception {
 
 		HomePage homePage = PageFactory.initElements(driver, HomePage.class);
 		ProductPage productPage = PageFactory.initElements(driver, ProductPage.class);
@@ -59,7 +59,7 @@ public class ConsultaProdutoBarraDePesquisa {
 		homePage.setSearch(ExcelUtils.getCellData(6, 1));
 
 		productPage.assertEqualsProductFail(ExcelUtils.getCellData(6, 1));
-		Screenshot.getScreenShot(driver, "Consultar Produto Com Falha", "TesteConsultaProdutoComFalha");
+		Screenshot.getScreenShot(driver, "Consultar Produto Pela Barra de Pesquisa Com Falha", "TesteConsultaProdutoPelaBarraDePesquisaComFalha");
 
 	}
 

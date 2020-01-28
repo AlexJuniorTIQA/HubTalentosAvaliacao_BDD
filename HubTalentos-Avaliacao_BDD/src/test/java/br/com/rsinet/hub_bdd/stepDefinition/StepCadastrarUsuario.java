@@ -62,14 +62,14 @@ public class StepCadastrarUsuario {
 	public void eu_consigo_criar_o_meu_usuário() throws Throwable {
 		homePage.waitHome();
 		homePage.assertEqualsUser(ExcelUtils.getCellData(1, 1));
-		Screenshot.getScreenShot(driver, "Cadastro Novo Usuario Com Sucesso", "TesteNovoUsuarioComSucesso");
+		Screenshot.getScreenShot(driver, "Cadastro Novo Usuario Com Sucesso", "TesteCadastroNovoUsuarioComSucesso");
 	}
 
 	@Então("^não consigo criar meu usuario, pois já há um existente$")
 	public void eu_não_consigo_criar_meu_usuario_pois_já_há_um_existente() throws Throwable {
 		registerPage.clickButtonRegisterFail();
 		registerPage.assertEqualsRegisterFail();
-		Screenshot.getScreenShot(driver, "Cadastro Usuario Com Falha", "TesteNovoUsuarioComFalha");
+		Screenshot.getScreenShot(driver, "Cadastro Novo Usuario Com Falha", "TesteCadastroNovoUsuarioComFalha");
 	}
 
 }

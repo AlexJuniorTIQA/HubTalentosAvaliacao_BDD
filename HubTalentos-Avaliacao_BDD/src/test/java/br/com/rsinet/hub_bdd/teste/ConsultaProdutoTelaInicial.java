@@ -34,7 +34,7 @@ public class ConsultaProdutoTelaInicial {
 	}
 
 	@Test
-	public void ConsultarProdutoSucesso() throws Exception {
+	public void ConsultarProdutPelaTelaInicialComSucesso() throws Exception {
 		HomePage homePage = PageFactory.initElements(driver, HomePage.class);
 		ProductPage productPage = PageFactory.initElements(driver, ProductPage.class);
 		ExcelUtils.setExcelFile(Constant.File_DataUserRegister, "Mice");
@@ -43,18 +43,20 @@ public class ConsultaProdutoTelaInicial {
 		homePage.findElementLinkText(ExcelUtils.getCellData(3, 1));
 
 		productPage.assertEqualsProduct(ExcelUtils.getCellData(3, 1));
-		Screenshot.getScreenShot(driver, "Consultar Produto Com Sucesso", "TesteConsultaTelaPrincipalComSucesso");
+		Screenshot.getScreenShot(driver, "Consultar Produto Pela Tela Inicial Com Sucesso",
+				"TesteConsultaTelaPrincipalComSucesso");
 	}
 
 	@Test
-	public void ConsultarProdutoFalha() throws Exception {
-		
+	public void ConsultarProdutoPelaTelaInicialComFalha() throws Exception {
+
 		ProductPage productPage = PageFactory.initElements(driver, ProductPage.class);
-		
+
 		productPage.ClickEelementHPEliteBookFolioDetails();
-		productPage.assertEqualsProduct("HP CHROMEBOOK 14 G1(ES)");	
-		
-		Screenshot.getScreenShot(driver, "Consultar Produto Com Falha", "TesteConsultaTelaPrincipalComFalha");
+		productPage.assertEqualsProduct("HP CHROMEBOOK 14 G1(ES)");
+
+		Screenshot.getScreenShot(driver, "Consultar Produto Pela Tela Inicial Com Falha",
+				"TesteConsultaTelaPrincipalComFalha");
 	}
 
 }

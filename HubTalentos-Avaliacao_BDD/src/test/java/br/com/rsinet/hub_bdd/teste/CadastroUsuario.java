@@ -32,7 +32,7 @@ public class CadastroUsuario {
 	}
 
 	@Test
-	public void NovoUsuarioComSucesso() throws Exception {
+	public void CadastroNovoUsuarioComSucesso() throws Exception {
 		HomePage homePage = PageFactory.initElements(driver, HomePage.class);
 		RegisterPage registerPage = PageFactory.initElements(driver, RegisterPage.class);
         ExcelUtils.setExcelFile(Constant.File_DataUserRegister,"Users");
@@ -48,13 +48,13 @@ public class CadastroUsuario {
 		homePage.waitHome();
 
 		homePage.assertEqualsUser(ExcelUtils.getCellData(1,1));
-		Screenshot.getScreenShot(driver, "Cadastro Novo Usuario Com Sucesso", "TesteNovoUsuarioComSucesso");
+		Screenshot.getScreenShot(driver, "Cadastro Novo Usuario Com Sucesso", "TesteCadastroNovoUsuarioComSucesso");
 	}
 	
 	
 	
 	@Test
-	public void NovoUsuarioComFalhaB() throws Exception {
+	public void CadastroNovoUsuarioComFalhaB() throws Exception {
 		HomePage homePage = PageFactory.initElements(driver, HomePage.class);
 		RegisterPage registerPage = PageFactory.initElements(driver, RegisterPage.class);
         ExcelUtils.setExcelFile(Constant.File_DataUserRegister,"Users");
@@ -69,6 +69,6 @@ public class CadastroUsuario {
 		
 		
 		registerPage.assertEqualsRegisterFail();
-		Screenshot.getScreenShot(driver, "Cadastro Usuario Com Falha", "TesteNovoUsuarioComFalha");
+		Screenshot.getScreenShot(driver, "Cadastro Novo Usuario Com Falha", "TesteCadastroNovoUsuarioComFalha");
 	}
 }
